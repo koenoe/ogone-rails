@@ -76,7 +76,7 @@ module Ogone
     code = code.to_i
 
     description = 'Onbekend'
-    if Ogone::statuses[code]
+    unless Ogone::statuses[code].blank?
       description = Ogone::statuses[code]
     end
     description
