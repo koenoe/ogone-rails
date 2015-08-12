@@ -30,52 +30,52 @@ module Ogone
 
   def statuses
     {
-      0 => 'Ongeldig of onvolledig',
-      1 => 'Geannuleerd door de klant',
-      2 => 'Autorisatie geweigerd',
-      4 => 'Opgeslagen bestelling',
+      0 => 'invalid',
+      1 => 'canceled',
+      2 => 'refused',
+      4 => 'saved_order',
       40 => '',
-      41 => 'Waiting client payment',
-      5 => 'Geautoriseerd',
+      41 => 'waiting',
+      5 => 'authorized',
       50 => '',
-      51 => 'Autorisatie pending',
-      52 => 'Autorisatie onzeker',
-      55 => 'Stand-by',
-      56 => 'OK met geplande betalingen',
+      51 => 'authorisation_pending',
+      52 => 'authorisation_unsure',
+      55 => 'standby',
+      56 => 'planned',
       57 => '',
-      59 => 'Manueel te bekomen autorisatie',
-      6 => 'Geautoriseerd en geannuleerd',
-      61 => 'Annul. autor. pending',
-      62 => 'Annul. autor. onzeker',
-      63 => 'Annul. autor. geweigerd',
-      64 => 'Geautoriseerd en geannuleerd',
-      7 => 'Betaling geannuleerd',
-      71 => 'Annul.betaling pending',
-      72 => 'Annul. betaling onzeker',
-      73 => 'Annul betaling geweigerd',
-      74 => 'Betaling geannuleerd',
-      75 => 'Annul. betaling verwerkt door merch',
-      8 => 'Terugbetaald',
-      81 => 'Terugbetaling pending',
-      82 => 'Terugbetaling onzeker',
-      83 => 'Terugbetaling geweigerd',
-      84 => 'Terugbetaald',
-      85 => 'Terugbet. verwerkt door merchant',
-      9 => 'Betaling aangevraagd',
-      91 => 'Betaling pending',
-      92 => 'Betaling onzeker',
-      93 => 'Betaling geweigerd',
-      94 => 'Terugbet. geweigerd door de bank',
-      95 => 'Betaling verwerkt door merchant',
+      59 => 'manual_authorisation',
+      6 => 'authorized_canceled',
+      61 => 'authorized_canceled_pending',
+      62 => 'authorized_canceled_unsure',
+      63 => 'authorized_canceled_refused',
+      64 => 'authorized_canceled',
+      7 => 'payment_canceled',
+      71 => 'payment_canceled_pending',
+      72 => 'payment_canceled_unsure',
+      73 => 'payment_canceled_refused',
+      74 => 'payment_canceled',
+      75 => 'payment_canceled_processed',
+      8 => 'refunded',
+      81 => 'refunded_pending',
+      82 => 'refunded_unsure',
+      83 => 'refunded_refused',
+      84 => 'refunded',
+      85 => 'refunded_processed',
+      9 => 'payment_accepted',
+      91 => 'payment_accepted_pending',
+      92 => 'payment_accepted_unsure',
+      93 => 'payment_accepted_refused',
+      94 => 'payment_accepted_refunded_refused',
+      95 => 'payment_accepted_processed',
       96 => '',
-      99 => 'Wordt verwerkt'
+      99 => 'processing'
     }
   end
 
   def status(code)
     code = code.to_i
 
-    description = 'Onbekend'
+    description = 'unknown'
     unless Ogone::statuses[code].blank?
       description = Ogone::statuses[code]
     end
