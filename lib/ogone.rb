@@ -36,7 +36,7 @@ module Ogone
       4: 'Opgeslagen bestelling',
       40: '',
       41: 'Waiting client payment',
-      5': Geautoriseerd',
+      5: 'Geautoriseerd',
       50: '',
       51: 'Autorisatie pending',
       52: 'Autorisatie onzeker',
