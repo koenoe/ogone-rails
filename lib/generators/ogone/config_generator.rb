@@ -2,7 +2,7 @@ require "rails/generators/base"
 
 module Ogone
   module Generators
-    class InstallGenerator < Rails::Generators::Base
+    class ConfigGenerator < Rails::Generators::Base
 
       source_root File.expand_path("../templates", __FILE__)
 
