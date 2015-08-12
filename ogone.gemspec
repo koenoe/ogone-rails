@@ -6,8 +6,8 @@ require 'ogone/version'
 Gem::Specification.new do |spec|
   spec.name          = "ogone"
   spec.version       = Ogone::VERSION
-  spec.authors       = ["Koen Romers"]
-  spec.email         = ["info@koenromers.com"]
+  spec.authors       = ["Mangrove: Koen Romers"]
+  spec.email         = ["koen@mangrove.nl"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}

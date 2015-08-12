@@ -1,0 +1,27 @@
+development:
+  psp_id: ""
+  sha_in: ""
+  mode: "test"
+
+  accept_url: ""
+  cancel_url: ""
+  decline_url: ""
+  exception_url: ""
+staging:
+  psp_id: ""
+  sha_in: ""
+  mode: "test"
+
+  accept_url: ""
+  cancel_url: ""
+  decline_url: ""
+  exception_url: ""
+production:
+  psp_id: ""
+  sha_in: ""
+  mode: "live"
+
+  accept_url: ""
+  cancel_url: ""
+  decline_url: ""
+  exception_url: ""
