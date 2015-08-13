@@ -7,7 +7,7 @@ module Ogone
 
       ogone = Ogone::Base.new unless ogone.is_a?(Ogone::Base)
 
-      buffer = "<form method='post' action='#{Ogone::post_url}' id='form1' name='form1 class='ogone-form'>"
+      buffer = "<form method='post' action='#{Ogone::post_url}' id='form1' name='form1' class='ogone-form'>"
       ogone.params.each do |key, value|
         buffer += "<input type='hidden' name='#{key}' value='#{value}'>"
       end
