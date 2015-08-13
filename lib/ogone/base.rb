@@ -20,7 +20,7 @@ module Ogone
 
     def add_param(key, value)
 
-      value = (value * 100) if key == 'order_amount'
+      value = (value * 100).to_i if key == 'order_amount'
 
       if Ogone::fields[key.to_sym].present?
         key = Ogone::fields[key.to_sym]
