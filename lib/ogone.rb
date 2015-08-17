@@ -5,7 +5,18 @@ require 'ogone/helpers'
 require 'ogone/base'
 
 module Ogone
+
   extend self
+
+  @currency = 'EUR'
+  @language = 'nl_NL'
+  @mode = nil
+  @psp_id = nil
+  @sha_in = nil
+  @accept_url = nil
+  @cancel_url = nil
+  @decline_url = nil
+  @exception_url = nil
 
   def fields
     {
@@ -82,31 +93,61 @@ module Ogone
     description
   end
 
-  def post_url
-    "https://secure.ogone.com/ncol/#{Rails.application.config.ogone[:mode]}/orderstandard.asp"
+  def parse_config(yml)
+    yml.each do |key, value|
+      case key
+      when :psp_id
+        @psp_id = value
+      when :sha_in
+        @sha_in = value
+      when :accept_url
+        @accept_url = value
+      when :cancel_url
+        @cancel_url = value
+      when :decline_url
+        @decline_url = value
+      when :exception_url
+        @exception_url = value
+      when :mode
+        @mode = value
+      when :currency
+        @currency = value unless value.nil?
+      when :language
+        @language = value unless value.nil?
+      end
+    end
   end
+
+  def post_url
+    "https://secure.ogone.com/ncol/#{mode}/orderstandard.asp"
+  end
+
   def psp_id
-    "#{Rails.application.config.ogone[:psp_id]}"
+    @psp_id
   end
   def sha_in
-    "#{Rails.application.config.ogone[:sha_in]}"
+    @sha_in
   end
   def language
-    "nl_NL"
+    @language
   end
   def currency
-    "EUR"
+    @currency
+  end
+  def mode
+    @mode
   end
   def accept_url
-    "#{Rails.application.config.ogone[:accept_url]}"
+    @accept_url
   end
   def cancel_url
-    "#{Rails.application.config.ogone[:cancel_url]}"
+    @cancel_url
   end
   def decline_url
-    "#{Rails.application.config.ogone[:decline_url]}"
+    @decline_url
   end
   def exception_url
-    "#{Rails.application.config.ogone[:exception_url]}"
+    @exception_url
   end
+
 end
