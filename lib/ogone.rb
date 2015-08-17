@@ -108,12 +108,12 @@ module Ogone
         @decline_url = value
       when :exception_url
         @exception_url = value
+      when :mode
+        @mode = value
       when :currency
         @currency = value unless value.nil?
       when :language
         @language = value unless value.nil?
-      when :mode
-        @mode = value unless value.nil?
       end
     end
   end
